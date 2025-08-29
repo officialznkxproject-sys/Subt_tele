@@ -1,0 +1,12 @@
+# Environment variables
+.env
+
+# Database
+*.db
+*.sqlite
+
+# Downloads folder
+downloads/
+
+# Temporary files
+temp_*
