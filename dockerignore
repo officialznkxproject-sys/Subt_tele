@@ -1,0 +1,15 @@
+.env
+*.db
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.E.g.g
+.git
+.mypy_cache
+.pytest_cache
+.history
+.DS_Store
