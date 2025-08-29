@@ -1,5 +1,6 @@
 import logging
 import asyncio
+from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
 from config import BOT_TOKEN, OWNER_USERNAME, OWNER_ID
@@ -11,6 +12,8 @@ from commands.games import register_game_handlers
 from commands.ai_features import register_ai_handlers
 from commands.admin import register_admin_handlers
 
+# Load environment variables
+load_dotenv()
 # Set up logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
