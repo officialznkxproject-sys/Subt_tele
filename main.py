@@ -142,12 +142,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     add_user(user_id, username)
     
     welcome_text = f"""
-Halo {user.first_name}! Selamat datang di TohangBot.
+Halo {user.first_name}! Selamat datang di SUNTbot.
 
-Aku adalah bot multifungsi siap pakai.
-Kamu bisa pakai aku buat informasi, hiburan, produktivitas, AI tools, hingga custom perintah sesuai kebutuhanmu 🎯
-Ketik /menu untuk lihat semua fitur, atau /help kalau butuh panduan.
-Enjoy dan semoga bermanfaat 🚀
+Saya adalah bot dengan 200+ perintah yang dapat membantu Anda dalam berbagai hal.
 
 Fitur yang tersedia:
 - Generate foto dan video
@@ -164,7 +161,7 @@ Gunakan /help untuk melihat semua perintah yang tersedia.
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     help_text = """
-Daftar Perintah TohangBot:
+Daftar Perintah SUNTbot:
 
 🎮 GAMES:
 /games - Menu permainan yang tersedia
@@ -613,4 +610,31 @@ def main():
     application.add_handler(CommandHandler("games", games_menu))
     application.add_handler(CommandHandler("rpg", rpg_game))
     application.add_handler(CommandHandler("quiz", quiz_game))
-    application.add_handler(CommandHandler("leader
+    application.add_handler(CommandHandler("leaderboard", show_leaderboard))
+    
+    # Download commands
+    application.add_handler(CommandHandler("download", download_menu))
+    application.add_handler(CommandHandler("ytmp3", youtube_mp3))
+    application.add_handler(CommandHandler("ytmp4", youtube_mp4))
+    
+    # AI commands
+    application.add_handler(CommandHandler("ai", ai_menu))
+    application.add_handler(CommandHandler("ask", ask_ai))
+    
+    # Utility commands
+    application.add_handler(CommandHandler("weather", get_weather))
+    
+    # Admin commands
+    application.add_handler(CommandHandler("admin", admin_menu))
+    application.add_handler(CommandHandler("users", show_users))
+    
+    # Entertainment commands
+    application.add_handler(CommandHandler("joke", tell_joke))
+    application.add_handler(CommandHandler("fact", random_fact))
+    application.add_handler(CommandHandler("quote", random_quote))
+    
+    # Start the bot
+    application.run_polling()
+
+if __name__ == "__main__":
+    main()
